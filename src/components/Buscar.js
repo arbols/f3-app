@@ -2,18 +2,16 @@ import React, { useState } from 'react';
 import { Container, Card, Button, Form, Row, Col } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
-function Alquiler() {
-  const [nuevoAlquiler, setNuevoAlquiler] = useState({
+function Buscar() {
+  const [nuevoBuscar, setNuevoBuscar] = useState({
     pelicula: '',
-    cliente: '',
-    fecha: '',
   });
 
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setNuevoAlquiler({
-    ...nuevoAlquiler,
+    setNuevoBuscar({
+    ...nuevoBuscar,
       [e.target.name]: e.target.value,
     });
   };
@@ -21,14 +19,14 @@ function Alquiler() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('Nuevo Alquiler:', nuevoAlquiler);
-    navigate('/alquiler');
+    console.log('Buscar Pelicula:', nuevoBuscar);
+    navigate('/peliculas');
   };
 
   return (
     <Container>
       <Card className="mt-5">
-        <Card.Header className="text-center">Nuevo Alquiler</Card.Header>
+        <Card.Header className="text-center">Buscar Pelicula</Card.Header>
         <Card.Body>
             <Form onSubmit={handleSubmit}>
 
@@ -38,33 +36,11 @@ function Alquiler() {
 
                     <Col md={6}>
                         <Form.Group controlId="pelicula">
-                        <Form.Label>ID Pelicula</Form.Label>
+                        <Form.Label>Pelicula</Form.Label>
                         <Form.Control
-                            type="number"
+                            type="text"
                             name="pelicula"
-                            value={nuevoAlquiler.pelicula}
-                            onChange={handleChange}
-                            required
-                        />
-                        </Form.Group>
-
-                        <Form.Group controlId="cliente">
-                        <Form.Label>ID Cliente</Form.Label>
-                        <Form.Control
-                            type="number"
-                            name="cliente"
-                            value={nuevoAlquiler.cliente}
-                            onChange={handleChange}
-                            required
-                        />
-                        </Form.Group>
-
-                        <Form.Group controlId="fecha">
-                        <Form.Label>Fecha Alquiler</Form.Label>
-                        <Form.Control
-                            type="date"
-                            name="fecha"
-                            value={nuevoAlquiler.fecha}
+                            value={nuevoBuscar.pelicula}
                             onChange={handleChange}
                             required
                         />
@@ -92,4 +68,4 @@ function Alquiler() {
   );
 }
 
-export default Alquiler;
+export default Buscar;

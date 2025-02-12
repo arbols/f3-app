@@ -2,18 +2,16 @@ import React, { useState } from 'react';
 import { Container, Card, Button, Form, Row, Col } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
-function Alquiler() {
-  const [nuevoAlquiler, setNuevoAlquiler] = useState({
+function Devolver() {
+  const [devoverAlquiler, setDevolverAlquiler] = useState({
     pelicula: '',
-    cliente: '',
-    fecha: '',
   });
 
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setNuevoAlquiler({
-    ...nuevoAlquiler,
+    setDevolverAlquiler({
+    ...devoverAlquiler,
       [e.target.name]: e.target.value,
     });
   };
@@ -21,14 +19,14 @@ function Alquiler() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('Nuevo Alquiler:', nuevoAlquiler);
-    navigate('/alquiler');
+    console.log('Devolver Alquiler:', devoverAlquiler);
+    navigate('/devolver');
   };
 
   return (
     <Container>
       <Card className="mt-5">
-        <Card.Header className="text-center">Nuevo Alquiler</Card.Header>
+        <Card.Header className="text-center">Devolver Alquiler</Card.Header>
         <Card.Body>
             <Form onSubmit={handleSubmit}>
 
@@ -42,29 +40,7 @@ function Alquiler() {
                         <Form.Control
                             type="number"
                             name="pelicula"
-                            value={nuevoAlquiler.pelicula}
-                            onChange={handleChange}
-                            required
-                        />
-                        </Form.Group>
-
-                        <Form.Group controlId="cliente">
-                        <Form.Label>ID Cliente</Form.Label>
-                        <Form.Control
-                            type="number"
-                            name="cliente"
-                            value={nuevoAlquiler.cliente}
-                            onChange={handleChange}
-                            required
-                        />
-                        </Form.Group>
-
-                        <Form.Group controlId="fecha">
-                        <Form.Label>Fecha Alquiler</Form.Label>
-                        <Form.Control
-                            type="date"
-                            name="fecha"
-                            value={nuevoAlquiler.fecha}
+                            value={devoverAlquiler.pelicula}
                             onChange={handleChange}
                             required
                         />
@@ -92,4 +68,4 @@ function Alquiler() {
   );
 }
 
-export default Alquiler;
+export default Devolver;
