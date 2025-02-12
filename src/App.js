@@ -23,9 +23,7 @@ function App() {
             <Nav className="ml-auto">
               <Nav.Link as={Link} to="/">Inicio</Nav.Link>
               <Nav.Link as={Link} to="/peliculas">Peliculas</Nav.Link>
-
               <Nav.Link as={Link} to="/buscar">Buscar Peliculas</Nav.Link>
-
               <Nav.Link as={Link} to="/pelicula">Nueva Pelicula</Nav.Link>
               <Nav.Link as={Link} to="/clientes">Clientes</Nav.Link>
               <Nav.Link as={Link} to="/cliente">Nuevo Cliente</Nav.Link>

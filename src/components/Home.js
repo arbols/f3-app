@@ -14,7 +14,7 @@ function Home() {
           <Link to="/peliculas"> {}
             <Button variant="primary">Ir a Coleccion de Peliculas</Button>
           </Link>
-          <Link to="/peliculas"> {}
+          <Link to="/buscar"> {}
             <Button variant="primary">Buscar Pelicula</Button>
           </Link>
         </Card.Body>
